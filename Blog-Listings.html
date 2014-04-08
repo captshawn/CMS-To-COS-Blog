@@ -52,10 +52,10 @@
                                 </div>
                             {% endif %}
                             {{ content.post_list_content|safe }}
-                        </div>
                         {% if content_group.show_summary_in_listing %}
                             <a class="more-link" href="{{ content.absolute_url }}">Read More</a>
-                        {% endif %}                        
+                        {% endif %}    
+                    </div>
                     <div class="custom_listing_comments">
                         {% set comments_number =  content.comment_list|length %}
                         {% if comments_number == 1 %}
