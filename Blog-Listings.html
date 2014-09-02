@@ -77,14 +77,16 @@
             {% endfor %}
         </div>
 
-        <div class="blog-pagination">
-            {% if last_page_num %}
-                <a class="previous-posts-link" href="{{ blog_page_link(last_page_num) }}">Previous</a>
-            {% endif %}
-                <a class="all-posts-link" href="{{ group.absolute_url }}/all">All posts</a>
-            {% if next_page_num %}
-                <a class="next-posts-link" href="{{ blog_page_link(next_page_num) }}">Next</a>
-            {% endif %}
-        </div>
+             {% if not simple_list_page %}
+            <div class="blog-pagination">
+                {% if last_page_num %}
+                    <a class="previous-posts-link" href="{{ blog_page_link(last_page_num) }}">Previous Page</a>
+                {% endif %}
+                    <a class="all-posts-link" href="{{ group.absolute_url }}/all">All Posts</a>
+                {% if next_page_num %}
+                    <a class="next-posts-link" href="{{ blog_page_link(next_page_num) }}">Next Page</a>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
 </div>
